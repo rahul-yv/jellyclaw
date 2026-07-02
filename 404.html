@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="/">
+<title>404 — This agent got lost | JellyClaw</title>
+<meta name="description" content="This page doesn't exist. Even the best-supervised agent wanders off sometimes.">
+<meta name="robots" content="noindex">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="404 — This agent got lost | JellyClaw">
+<meta property="og:description" content="This page doesn't exist. Even the best-supervised agent wanders off sometimes.">
+<meta property="og:url" content="https://jellyclaw.dev/404.html">
+<meta property="og:image" content="https://jellyclaw.dev/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="404 — This agent got lost | JellyClaw">
+<meta name="twitter:description" content="This page doesn't exist. Even the best-supervised agent wanders off sometimes.">
+<meta name="twitter:image" content="https://jellyclaw.dev/og-image.png">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .error-wrap {
+    min-height: calc(100vh - 72px - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 64px 24px;
+  }
+  .jelly {
+    font-size: 6rem;
+    display: inline-block;
+    animation: bob 4s ease-in-out infinite;
+  }
+  @keyframes bob {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-18px) rotate(3deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .jelly { animation: none; }
+  }
+  .error-code {
+    font-family: 'Fira Code', monospace;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    margin-top: 12px;
+  }
+</style>
+</head>
+<body>
+<div class="bg-gradient"></div>
+<div class="particles"></div>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="brand">🦑 <span class="gradient-text">JellyClaw</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="docs.html">Docs</a>
+      <a href="architecture.html">Architecture</a>
+      <a href="community.html">Community</a>
+      <a href="https://github.com/rahul-yv/jellyclaw" class="nav-cta" target="_blank" rel="noopener">⭐ GitHub</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="error-wrap">
+  <div>
+    <span class="jelly">🪼</span>
+    <h1 style="font-size: clamp(2rem, 5vw, 3rem); margin-top: 8px;">This agent got <span class="gradient-text">lost</span></h1>
+    <p class="muted" style="max-width: 420px; margin: 0 auto 8px;">
+      It wandered off-task and didn't file a report. Unlike your other agents, this one isn't
+      coming back with an approval request — the page just isn't here.
+    </p>
+    <p class="error-code">ERROR 404 · TASK NOT FOUND</p>
+    <div class="btn-row center" style="margin-top: 32px;">
+      <a href="index.html" class="btn btn-primary">Back to Home</a>
+      <a href="docs.html" class="btn btn-outline">Read the Docs</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand">🦑 <span class="gradient-text">JellyClaw</span></a>
+        <p class="muted footer-tagline">Your AI teammate that never sleeps. Self-hosted, open-source, free forever.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="architecture.html">Architecture</a></li>
+          <li><a href="docs.html">Docs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <ul>
+          <li><a href="community.html">Open Source</a></li>
+          <li><a href="https://github.com/rahul-yv/jellyclaw" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://github.com/rahul-yv/jellyclaw/issues" target="_blank" rel="noopener">Issues</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="docs.html#faq">FAQ</a></li>
+          <li><a href="community.html#license">License</a></li>
+          <li><a href="community.html#roadmap">Roadmap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 JellyClaw. MIT Licensed.</span>
+      <span>Built for founders who sleep better.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
