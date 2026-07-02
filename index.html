@@ -3,25 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JellyClaw — Your AI Teammate That Never Sleeps</title>
+<title>JellyClaw — The AI Team That Works While You Sleep</title>
 <meta name="description" content="JellyClaw is a free, self-hosted, open-source multi-agent AI orchestration platform. Assign work, connect Telegram, and wake up to finished tasks — MIT licensed, forever free.">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="JellyClaw — Your AI Teammate That Never Sleeps">
+<meta property="og:title" content="JellyClaw — The AI Team That Works While You Sleep">
 <meta property="og:description" content="Self-hosted, open-source multi-agent AI orchestration. Free forever, MIT licensed.">
 <meta property="og:url" content="https://jellyclaw.dev/">
 <meta property="og:image" content="https://jellyclaw.dev/og-image.png">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="JellyClaw — Your AI Teammate That Never Sleeps">
+<meta name="twitter:title" content="JellyClaw — The AI Team That Works While You Sleep">
 <meta name="twitter:description" content="Self-hosted, open-source multi-agent AI orchestration. Free forever, MIT licensed.">
 <meta name="twitter:image" content="https://jellyclaw.dev/og-image.png">
 
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 
 <script type="application/ld+json">
 {
@@ -48,45 +48,99 @@
 
 <nav class="site-nav">
   <div class="container">
-    <a href="index.html" class="brand"><img src="favicon.svg" class="logo-icon" alt="" width="32" height="32"> <span class="gradient-text">JellyClaw</span></a>
+    <a href="/" class="brand"><img src="/favicon.svg" class="logo-icon" alt="" width="32" height="32"> <span class="gradient-text">JellyClaw</span></a>
     <div class="nav-links" id="navLinks">
-      <a href="index.html" class="active">Home</a>
-      <a href="docs.html">Docs</a>
-      <a href="architecture.html">Architecture</a>
-      <a href="community.html">Community</a>
-      <a href="https://github.com/rahul-yv/jellyclaw" class="nav-cta" target="_blank" rel="noopener">⭐ GitHub</a>
+      <a href="/" class="active">Product</a>
+      <a href="/agents.html">Agents</a>
+      <a href="/integrations.html">Integrations</a>
+      <a href="/blog/">Blog</a>
+      <a href="/docs.html">Docs</a>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-actions">
+      <a href="https://github.com/rahul-yv/jellyclaw" class="nav-icon" target="_blank" rel="noopener" aria-label="JellyClaw on GitHub"><svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+        <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
 
 <header class="page-hero page-hero-lg">
   <div class="container">
-    <span class="badge">Free Forever · Self-Hosted · MIT</span>
-    <h1 style="font-size: clamp(2.4rem, 6vw, 4.2rem); max-width: 900px; margin: 0 auto 20px;">
-      Your AI teammate that <span class="gradient-text">never sleeps</span>
-    </h1>
-    <p class="muted" style="font-size: 1.2rem; max-width: 620px; margin: 0 auto 40px;">
-      JellyClaw runs a hierarchy of AI agents on your own hardware. Assign the work, close your
-      laptop, and wake up to finished tasks and a report in Telegram.
+    <img src="/favicon.svg" alt="" class="hero-mark" width="96" height="96">
+    <h1 class="wordmark gradient-text">JellyClaw</h1>
+    <p class="tagline">The AI team that works while you sleep.</p>
+    <p class="muted hero-desc">
+      A hierarchy of AI agents on your own hardware — they code, review, and research overnight, then report to your Telegram.
+      Self-hosted, open source, and free forever.
     </p>
-
-    <div class="code-block" style="max-width: 620px; margin: 0 auto 32px; text-align: left;">
-      <div class="code-head">
-        <span>terminal</span>
-        <button class="copy-btn" data-copy-target="install-cmd">Copy</button>
-      </div>
-      <pre><code id="install-cmd">curl -fsSL https://get.jellyclaw.dev | bash</code></pre>
-    </div>
-
     <div class="btn-row center">
       <a href="https://github.com/rahul-yv/jellyclaw" class="btn btn-primary" target="_blank" rel="noopener">⭐ Star on GitHub</a>
-      <a href="docs.html" class="btn btn-outline">Read the Docs</a>
+      <a href="/docs.html" class="btn btn-outline">Read the Docs</a>
     </div>
+  </div>
+</header>
 
-    <div class="terminal" aria-hidden="true">
+<section id="quick-start" style="padding-top: 40px;">
+  <div class="container">
+    <div class="section-head fade-up">
+      <h2>Quick Start</h2>
+      <p>From zero to a running AI team in about ten minutes.</p>
+    </div>
+    <div class="terminal quickstart fade-up" data-tabs>
+      <div class="terminal-head">
+        <span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span>
+        <div class="qs-tabs" role="tablist">
+          <button class="qs-tab active" role="tab" aria-selected="true" data-panel="panel-oneliner">One-liner</button>
+          <button class="qs-tab" role="tab" aria-selected="false" data-panel="panel-manual">Manual</button>
+          <button class="qs-tab" role="tab" aria-selected="false" data-panel="panel-reqs">Requirements</button>
+        </div>
+      </div>
+      <div class="tab-panel active" id="panel-oneliner" role="tabpanel">
+        <div class="code-head">
+          <span>terminal</span>
+          <button class="copy-btn" data-copy-target="qs-oneliner">Copy</button>
+        </div>
+        <pre><code id="qs-oneliner">curl -fsSL https://get.jellyclaw.dev | bash</code></pre>
+      </div>
+      <div class="tab-panel" id="panel-manual" role="tabpanel">
+        <div class="code-head">
+          <span>terminal</span>
+          <button class="copy-btn" data-copy-target="qs-manual">Copy</button>
+        </div>
+        <pre><code id="qs-manual">git clone https://github.com/rahul-yv/jellyclaw.git
+cd jellyclaw
+./install.sh
+./setup.sh</code></pre>
+      </div>
+      <div class="tab-panel" id="panel-reqs" role="tabpanel">
+        <div class="code-head">
+          <span>requirements</span>
+          <button class="copy-btn" data-copy-target="qs-reqs">Copy</button>
+        </div>
+        <pre><code id="qs-reqs"><span class="comment"># minimum</span>
+RAM       16GB (for local Ollama models)
+OS        Linux or macOS
+Ollama    installed and running
+<span class="comment"># optional but recommended</span>
+Claude API key    for high-stakes tasks
+Telegram account  for reports &amp; approvals</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt" style="text-align: center;">
+  <div class="container">
+    <div class="section-head fade-up">
+      <h2>See it working</h2>
+      <p>A night in the life of your agent team.</p>
+    </div>
+    <div class="terminal fade-up" style="margin-top: 0;" aria-hidden="true">
       <div class="terminal-head">
         <span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span>
         <span class="terminal-title">jellyclaw · agent activity</span>
@@ -99,7 +153,7 @@
       </div>
     </div>
   </div>
-</header>
+</section>
 
 <section id="features">
   <div class="container">
@@ -170,37 +224,6 @@
 
 <section>
   <div class="container">
-    <div class="section-head fade-up">
-      <h2>How it works</h2>
-      <p>From zero to a running AI team in about ten minutes.</p>
-    </div>
-    <div class="grid grid-4">
-      <div class="card fade-up">
-        <span class="icon">1️⃣</span>
-        <h3>Install</h3>
-        <p>Run the one-line install script on any Linux or macOS machine with 16GB of RAM.</p>
-      </div>
-      <div class="card fade-up">
-        <span class="icon">2️⃣</span>
-        <h3>Connect Telegram</h3>
-        <p>Create a bot with BotFather, drop the token in your .env, and JellyClaw finds your chat automatically.</p>
-      </div>
-      <div class="card fade-up">
-        <span class="icon">3️⃣</span>
-        <h3>Assign Work</h3>
-        <p>Tell your orchestrator agent what you need. It plans, delegates, and gets to work.</p>
-      </div>
-      <div class="card fade-up">
-        <span class="icon">4️⃣</span>
-        <h3>Wake Up to Reports</h3>
-        <p>Check Telegram in the morning. Approve what needs a human, ship what doesn't.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-alt">
-  <div class="container">
     <div class="card fade-up" style="text-align: center; padding: 56px 32px;">
       <h2 style="font-size: clamp(1.6rem, 3.5vw, 2.2rem); max-width: 760px; margin: 0 auto 16px;">
         Claude Code works when you're at the terminal.<br>
@@ -214,7 +237,7 @@
   </div>
 </section>
 
-<section id="faq">
+<section id="faq" class="section-alt">
   <div class="container">
     <div class="section-head fade-up">
       <h2>Questions, answered honestly</h2>
@@ -241,7 +264,7 @@
   </div>
 </section>
 
-<section class="section-alt" style="text-align: center;">
+<section style="text-align: center;">
   <div class="container">
     <h2 class="fade-up">Ready to build your AI team?</h2>
     <p class="muted fade-up" style="max-width: 480px; margin: 0 auto 32px;">
@@ -249,7 +272,7 @@
     </p>
     <div class="btn-row fade-up center">
       <a href="https://github.com/rahul-yv/jellyclaw" class="btn btn-primary" target="_blank" rel="noopener">⭐ Star on GitHub</a>
-      <a href="docs.html" class="btn btn-outline">Get Started</a>
+      <a href="/docs.html" class="btn btn-outline">Get Started</a>
     </div>
   </div>
 </section>
@@ -258,31 +281,31 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a href="index.html" class="brand"><img src="favicon.svg" class="logo-icon" alt="" width="32" height="32"> <span class="gradient-text">JellyClaw</span></a>
-        <p class="muted footer-tagline">Your AI teammate that never sleeps. Self-hosted, open-source, free forever.</p>
+        <a href="/" class="brand"><img src="/favicon.svg" class="logo-icon" alt="" width="32" height="32"> <span class="gradient-text">JellyClaw</span></a>
+        <p class="muted footer-tagline">MIT licensed · Free forever for self-hosted. Your AI teammate that never sleeps.</p>
       </div>
       <div>
         <h4>Product</h4>
         <ul>
-          <li><a href="index.html#features">Features</a></li>
-          <li><a href="architecture.html">Architecture</a></li>
-          <li><a href="docs.html">Docs</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Community</h4>
-        <ul>
-          <li><a href="community.html">Open Source</a></li>
-          <li><a href="https://github.com/rahul-yv/jellyclaw" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="https://github.com/rahul-yv/jellyclaw/issues" target="_blank" rel="noopener">Issues</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/agents.html">Agents</a></li>
+          <li><a href="/integrations.html">Integrations</a></li>
         </ul>
       </div>
       <div>
         <h4>Resources</h4>
         <ul>
-          <li><a href="docs.html#faq">FAQ</a></li>
-          <li><a href="community.html#license">License</a></li>
-          <li><a href="community.html#roadmap">Roadmap</a></li>
+          <li><a href="/docs.html">Docs</a></li>
+          <li><a href="/architecture.html">Architecture</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://github.com/rahul-yv/jellyclaw" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://github.com/rahul-yv/jellyclaw/issues" target="_blank" rel="noopener">Issues</a></li>
+          <li><a href="/community.html">Community</a></li>
         </ul>
       </div>
     </div>
@@ -293,6 +316,6 @@
   </div>
 </footer>
 
-<script src="js/main.js" defer></script>
+<script src="/js/main.js" defer></script>
 </body>
 </html>

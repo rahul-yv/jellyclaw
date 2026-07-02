@@ -2,11 +2,38 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
+  initTheme();
+  initTabs();
   initParticles();
   initCopyButtons();
   initScrollReveal();
   initTerminal();
 });
+
+function initTheme() {
+  // Dark is the default; light is a session-only toggle (no persistence by design)
+  const btn = document.getElementById('themeToggle');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    document.documentElement.classList.toggle('light');
+  });
+}
+
+function initTabs() {
+  document.querySelectorAll('[data-tabs]').forEach((group) => {
+    const tabs = group.querySelectorAll('.qs-tab');
+    const panels = group.querySelectorAll('.tab-panel');
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        tabs.forEach((t) => {
+          t.classList.toggle('active', t === tab);
+          t.setAttribute('aria-selected', String(t === tab));
+        });
+        panels.forEach((p) => p.classList.toggle('active', p.id === tab.dataset.panel));
+      });
+    });
+  });
+}
 
 function initNav() {
   const toggle = document.querySelector('.hamburger');

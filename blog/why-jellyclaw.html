@@ -3,19 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>404 — This agent got lost | JellyClaw</title>
-<meta name="description" content="This page doesn't exist. Even the best-supervised agent wanders off sometimes.">
-<meta name="robots" content="noindex">
+<title>Why I built JellyClaw — JellyClaw Blog</title>
+<meta name="description" content="Two people, three products, and never enough hours. Why our fourth product had to be the one that works while we sleep.">
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="404 — This agent got lost | JellyClaw">
-<meta property="og:description" content="This page doesn't exist. Even the best-supervised agent wanders off sometimes.">
-<meta property="og:url" content="https://jellyclaw.dev/404.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Why I built JellyClaw">
+<meta property="og:description" content="Two people, three products, and never enough hours. Why our fourth product had to be the one that works while we sleep.">
+<meta property="og:url" content="https://jellyclaw.dev/blog/why-jellyclaw.html">
 <meta property="og:image" content="https://jellyclaw.dev/og-image.png">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="404 — This agent got lost | JellyClaw">
-<meta name="twitter:description" content="This page doesn't exist. Even the best-supervised agent wanders off sometimes.">
+<meta name="twitter:title" content="Why I built JellyClaw">
+<meta name="twitter:description" content="Two people, three products, and never enough hours. Why our fourth product had to be the one that works while we sleep.">
 <meta name="twitter:image" content="https://jellyclaw.dev/og-image.png">
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -23,34 +22,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
-<style>
-  .error-wrap {
-    min-height: calc(100vh - 72px - 200px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 64px 24px;
-  }
-  .jelly {
-    font-size: 6rem;
-    display: inline-block;
-    animation: bob 4s ease-in-out infinite;
-  }
-  @keyframes bob {
-    0%, 100% { transform: translateY(0) rotate(-3deg); }
-    50% { transform: translateY(-18px) rotate(3deg); }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .jelly { animation: none; }
-  }
-  .error-code {
-    font-family: 'Fira Code', monospace;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-    margin-top: 12px;
-  }
-</style>
 </head>
 <body>
 <div class="bg-gradient"></div>
@@ -63,7 +34,7 @@
       <a href="/">Product</a>
       <a href="/agents.html">Agents</a>
       <a href="/integrations.html">Integrations</a>
-      <a href="/blog/">Blog</a>
+      <a href="/blog/" class="active">Blog</a>
       <a href="/docs.html">Docs</a>
     </div>
     <div class="nav-actions">
@@ -79,21 +50,32 @@
   </div>
 </nav>
 
-<div class="error-wrap">
-  <div>
-    <span class="jelly">🪼</span>
-    <h1 style="font-size: clamp(2rem, 5vw, 3rem); margin-top: 8px;">This agent got <span class="gradient-text">lost</span></h1>
-    <p class="muted" style="max-width: 420px; margin: 0 auto 8px;">
-      It wandered off-task and didn't file a report. Unlike your other agents, this one isn't
-      coming back with an approval request — the page just isn't here.
-    </p>
-    <p class="error-code">ERROR 404 · TASK NOT FOUND</p>
-    <div class="btn-row center" style="margin-top: 32px;">
-      <a href="/" class="btn btn-primary">Back to Home</a>
-      <a href="/docs.html" class="btn btn-outline">Read the Docs</a>
-    </div>
+<main class="article">
+  <a href="/blog/" class="back-link">← Back to blog</a>
+  <div class="post-meta">
+    <span>2026-07-01</span>
+    <span>3 min read</span>
   </div>
-</div>
+  <h1>Why I built <span class="gradient-text">JellyClaw</span></h1>
+
+  <p>We're a two-person team running three products. That sentence sounds impressive until you live it: every morning starts with triage, every evening ends with a list of things that didn't get done, and the backlog compounds like interest working against you.</p>
+
+  <p>The obvious answer is hiring. We can't — not yet, and honestly, not for this kind of work. Most of what eats our days isn't hard. It's failing tests that need a small fix, PRs waiting on a first review pass, competitor pages someone should skim weekly, dependencies that need bumping before they become security emails. It's the work a good junior engineer does, and no junior engineer wants a job that's only that.</p>
+
+  <p>Meanwhile, I'd watch coding assistants do exactly this work — brilliantly — for the eight hours a day I sat at the terminal driving them. Then I'd close the laptop and all that capability went to sleep when I did. That asymmetry started to feel absurd. The models don't get tired at midnight. I do.</p>
+
+  <p>So JellyClaw started as a question: what's the minimum structure you need to let agents work <em>unsupervised</em> without waking up to a disaster?</p>
+
+  <p>The answer turned out to be three things. First, a hierarchy — one agent that owns the goal and delegates, so work gets broken into pieces small enough to check. Second, approval tiers — reversible actions run freely, medium-risk actions land in a digest, and anything scary blocks until I tap "approve" in Telegram. Third, an audit log — every decision, every tool call, written down, so trust is something I can verify instead of extend.</p>
+
+  <p>Telegram was a deliberate choice, and people ask about it more than anything else. The reason is boring: it's the app I already check in bed. The morning report arrives next to messages from actual humans, and approving a deploy takes one thumb. Any tool that requires opening a dashboard to stay informed will eventually stop being checked. The report has to come to you.</p>
+
+  <p>The other deliberate choice was self-hosting. Our code and our customers' data don't belong in someone else's orchestration SaaS, and a tool this deep in your workflow shouldn't be able to raise prices on you once you depend on it. JellyClaw runs on our own hardware, routes routine work to local models, and is MIT licensed — free forever for self-hosted use. That's not a marketing promise; it's a license file.</p>
+
+  <p>Does it work? Last Tuesday I woke up to four fixed tests, a reviewed PR with two real findings, and a pricing-page summary I'd been postponing for a month. None of it was heroic. All of it was done. That's the whole pitch: not an AI that amazes you, but a team that quietly moves things forward every single night.</p>
+
+  <p>We're building JellyClaw in the open. If the shape of the problem sounds like your life, come kick the tires — and tell us what your night shift should be doing.</p>
+</main>
 
 <footer class="site-footer">
   <div class="container">
