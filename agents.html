@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agents — JellyClaw</title>
+<meta name="description" content="How the JellyClaw agent hierarchy is designed: CEO Agent, Department Heads, and Workers, all defined in YAML.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/css/style.css">
+<script>try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="/"><img src="/favicon.svg" alt="" width="28" height="28"><span>JellyClaw</span></a>
+  <div class="nav-links">
+    <a href="/">Product</a>
+    <a href="/agents.html" class="active">Agents</a>
+    <a href="/integrations.html">Integrations</a>
+    <a href="/blog/">Blog</a>
+    <a href="/docs/">Docs</a>
+  </div>
+  <a class="nav-icon" href="https://github.com/jellyclaw-org/jellyclaw" target="_blank" rel="noopener" aria-label="JellyClaw on GitHub"><svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+    <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  </button>
+</nav>
+
+<header class="page-head">
+  <h1>An <span class="gradient-text">org chart</span>, not a chatbot</h1>
+  <p>JellyClaw structures agents the way companies structure people: one accountable chain from goal to task, defined entirely in YAML.</p>
+</header>
+
+<section style="padding-top: 40px;">
+  <div class="container">
+    <svg class="diagram" style="max-width: 720px;" viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="JellyClaw org chart: a CEO Agent delegates to Dev, Research, and Ops department heads, who delegate to worker agents">
+      <defs>
+        <linearGradient id="orgGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#ff6db5"/>
+          <stop offset="100%" stop-color="#e03d8f"/>
+        </linearGradient>
+      </defs>
+      <g stroke="#ff4fa3" stroke-width="1.5" opacity="0.5">
+        <line x1="360" y1="62" x2="140" y2="128"/>
+        <line x1="360" y1="62" x2="360" y2="128"/>
+        <line x1="360" y1="62" x2="580" y2="128"/>
+        <line x1="140" y1="172" x2="80" y2="248"/>
+        <line x1="140" y1="172" x2="220" y2="248"/>
+        <line x1="360" y1="172" x2="360" y2="248"/>
+        <line x1="580" y1="172" x2="500" y2="248"/>
+        <line x1="580" y1="172" x2="640" y2="248"/>
+      </g>
+      <rect x="280" y="14" width="160" height="48" rx="11" fill="url(#orgGrad)"/>
+      <text x="360" y="43" text-anchor="middle" fill="#ffffff" font-weight="700" font-size="16">CEO Agent</text>
+      <g style="fill:var(--card);stroke:var(--card-border)">
+        <rect x="60" y="128" width="160" height="44" rx="10"/>
+        <rect x="280" y="128" width="160" height="44" rx="10"/>
+        <rect x="500" y="128" width="160" height="44" rx="10"/>
+        <rect x="15" y="248" width="130" height="40" rx="10"/>
+        <rect x="155" y="248" width="130" height="40" rx="10"/>
+        <rect x="295" y="248" width="130" height="40" rx="10"/>
+        <rect x="435" y="248" width="130" height="40" rx="10"/>
+        <rect x="575" y="248" width="130" height="40" rx="10"/>
+      </g>
+      <g text-anchor="middle" font-size="13" style="fill:var(--text)">
+        <text x="140" y="155">Head · Dev</text>
+        <text x="360" y="155">Head · Research</text>
+        <text x="580" y="155">Head · Ops</text>
+        <text x="80" y="273">Coder</text>
+        <text x="220" y="273">Reviewer</text>
+        <text x="360" y="273">Analyst</text>
+        <text x="500" y="273">Writer</text>
+        <text x="640" y="273">Scheduler</text>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<section class="section-soft">
+  <div class="container">
+    <div class="section-head">
+      <h2>Three roles, one direction of delegation</h2>
+      <p>Work flows down the hierarchy; results and accountability flow back up.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <h3>👑 CEO Agent</h3>
+        <p>Owns the goal. It plans: breaking your objective into department-sized pieces, sequencing them, and deciding what matters tonight. It delegates each piece to the right department head, then assembles their results into the report that lands in your Telegram.</p>
+      </div>
+      <div class="card">
+        <h3>🧭 Department Heads</h3>
+        <p>Own an area — dev, research, ops. A head routes incoming work to the worker best suited for it, reviews what comes back before accepting it, and sends anything below the bar back down with notes. Nothing reaches the CEO unreviewed.</p>
+      </div>
+      <div class="card">
+        <h3>🔧 Workers</h3>
+        <p>Own execution. A worker does exactly one kind of task — write code, review a diff, summarize sources — using the model and tools its YAML gives it, and reports the result to its head. Small scope, sharp focus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <h2>Every agent is a few lines of YAML</h2>
+      <p>Model, role, tools — that's an agent. No code, no plugins, no framework to learn.</p>
+    </div>
+    <div class="code-block">
+      <pre><code><span class="comment"># planned format for the CLI MVP</span>
+agents:
+  code-reviewer:
+    role: worker
+    model: qwen2.5-coder:14b   <span class="comment"># any Ollama model, or claude for hard tasks</span>
+    tools: [git, shell]
+  research-writer:
+    role: worker
+    model: llama3.1:8b
+    tools: [web, files]</code></pre>
+    </div>
+  </div>
+</section>
+
+<section class="section-soft">
+  <div class="container">
+    <div class="section-head">
+      <h2>Launch templates</h2>
+      <p>Two ready-made offices ship with the CLI MVP. Start from one, then reshape it.</p>
+    </div>
+    <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+      <div class="card">
+        <h3>dev-team</h3>
+        <p>A coding department: workers draft changes and review each other's diffs overnight; the head signs off before anything reaches you.</p>
+        <div class="code-block" style="margin-top: 16px;">
+          <pre><code>team: dev-team
+departments:
+  engineering:
+    head: llama3.1:8b
+    workers: 2
+report:
+  channel: telegram</code></pre>
+        </div>
+      </div>
+      <div class="card">
+        <h3>sales-office</h3>
+        <p>A research-and-outreach pair: one department digs into prospects and competitors, the other drafts the follow-ups for your morning review.</p>
+        <div class="code-block" style="margin-top: 16px;">
+          <pre><code>team: sales-office
+departments:
+  research:
+    head: llama3.1:8b
+    workers: 2
+  outreach:
+    head: llama3.1:8b
+    workers: 1</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container" style="text-align: center;">
+    <div class="card" style="max-width: 620px; margin: 0 auto; padding: 40px 28px;">
+      <h3 style="font-size: 1.3rem;">The engine that runs this hierarchy is in active development.</h3>
+      <p>Watch the repo to catch the CLI MVP the moment it lands.</p>
+      <p style="margin-top: 20px;"><a class="btn btn-primary" href="https://github.com/jellyclaw-org/jellyclaw" target="_blank" rel="noopener">⭐ Watch on GitHub</a></p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <span>© 2026 JellyClaw · In active development — watch the repo.</span>
+  <nav>
+    <a href="/">Product</a>
+    <a href="/agents.html">Agents</a>
+    <a href="/integrations.html">Integrations</a>
+    <a href="/blog/">Blog</a>
+    <a href="/docs/">Docs</a>
+    <a href="https://github.com/jellyclaw-org/jellyclaw" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+</footer>
+
+<script src="/js/main.js" defer></script>
+</body>
+</html>
