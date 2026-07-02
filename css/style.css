@@ -134,6 +134,8 @@ code, pre, .code {
   text-decoration: none;
 }
 
+.logo-icon { width: 32px; height: 32px; display: block; flex-shrink: 0; }
+
 .nav-links {
   display: flex;
   align-items: center;
