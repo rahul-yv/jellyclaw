@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Help — JellyClaw Docs</title>
+<meta name="description" content="JellyClaw FAQ: what works today, the roadmap, local-first guarantees, supported models, and how to contribute.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/css/style.css">
+<script>try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="/"><img src="/favicon.svg" alt="" width="28" height="28"><span>JellyClaw</span></a>
+  <div class="nav-links">
+    <a href="https://github.com/jellyclaw-org/jellyclaw" target="_blank" rel="noopener">GitHub</a>
+  </div>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+    <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  </button>
+</nav>
+
+<div class="container">
+  <div class="docs-layout">
+    <aside class="docs-sidebar">
+      <h4>Get started</h4>
+      <ul>
+        <li><a href="/docs/">Overview</a></li>
+        <li><a href="/docs/quick-start.html">Quick start</a></li>
+      </ul>
+      <h4>Help</h4>
+      <ul>
+        <li><a href="/docs/help.html" class="active">FAQ &amp; roadmap</a></li>
+      </ul>
+      <h4>Coming up</h4>
+      <ul>
+        <li><a href="/docs/roadmap.html#agents" class="roadmap-link">Agents <span class="roadmap-badge">Roadmap</span></a></li>
+        <li><a href="/docs/roadmap.html#integrations" class="roadmap-link">Integrations <span class="roadmap-badge">Roadmap</span></a></li>
+        <li><a href="/docs/roadmap.html#reference" class="roadmap-link">Reference <span class="roadmap-badge">Roadmap</span></a></li>
+      </ul>
+    </aside>
+
+    <main class="docs-content">
+      <h1>FAQ</h1>
+
+      <h2 id="what-works">What works today?</h2>
+      <p>
+        The vision, architecture design, and a dashboard mockup. The core engine is in active development —
+        <a href="https://github.com/jellyclaw-org/jellyclaw" target="_blank" rel="noopener">watch the repo</a>
+        to catch the first release.
+      </p>
+
+      <h2 id="roadmap">What's the roadmap?</h2>
+      <ol>
+        <li><strong>CLI MVP</strong> — the engine, team YAML, and the MVP integrations.</li>
+        <li><strong>Open-source launch</strong> — public release on GitHub.</li>
+        <li><strong>Dashboard</strong> — a visual layer on top of the CLI, offered as premium.</li>
+      </ol>
+      <p>Details per area on the <a href="/docs/roadmap.html">roadmap page</a>.</p>
+
+      <h2 id="local">Is it really local?</h2>
+      <p>
+        Yes. Agents run on Ollama models on your own hardware, and state lives in a local SQLite file.
+        The only outbound calls are ones you configure: Telegram for reports, GitHub for code, and the
+        Claude API if you opt in to escalating hard tasks to it.
+      </p>
+
+      <h2 id="models">Which models?</h2>
+      <p>
+        Anything Ollama can run — you name the model per role in the team YAML. The Claude API is an
+        optional add-on for tasks that need a frontier model; without a key, everything stays local.
+      </p>
+
+      <h2 id="contribute">How do I contribute?</h2>
+      <p>
+        Open or pick up an issue on
+        <a href="https://github.com/jellyclaw-org/jellyclaw/issues" target="_blank" rel="noopener">GitHub Issues</a> —
+        feedback on the architecture and the planned YAML format is especially useful right now.
+      </p>
+    </main>
+  </div>
+</div>
+
+<footer class="footer">
+  <span>© 2026 JellyClaw · In active development — watch the repo.</span>
+  <nav>
+    <a href="https://github.com/jellyclaw-org/jellyclaw" target="_blank" rel="noopener">GitHub</a>
+    <a href="/docs/">Docs</a>
+  </nav>
+</footer>
+
+<script src="/js/main.js" defer></script>
+</body>
+</html>

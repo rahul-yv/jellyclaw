@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Docs — JellyClaw</title>
+<meta name="description" content="What JellyClaw is, how the agent hierarchy works, and how a team is configured in YAML.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/css/style.css">
+<script>try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="/"><img src="/favicon.svg" alt="" width="28" height="28"><span>JellyClaw</span></a>
+  <div class="nav-links">
+    <a href="https://github.com/jellyclaw-org/jellyclaw" target="_blank" rel="noopener">GitHub</a>
+  </div>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+    <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  </button>
+</nav>
+
+<div class="container">
+  <div class="docs-layout">
+    <aside class="docs-sidebar">
+      <h4>Get started</h4>
+      <ul>
+        <li><a href="/docs/" class="active">Overview</a></li>
+        <li><a href="/docs/quick-start.html">Quick start</a></li>
+      </ul>
+      <h4>Help</h4>
+      <ul>
+        <li><a href="/docs/help.html">FAQ &amp; roadmap</a></li>
+      </ul>
+      <h4>Coming up</h4>
+      <ul>
+        <li><a href="/docs/roadmap.html#agents" class="roadmap-link">Agents <span class="roadmap-badge">Roadmap</span></a></li>
+        <li><a href="/docs/roadmap.html#integrations" class="roadmap-link">Integrations <span class="roadmap-badge">Roadmap</span></a></li>
+        <li><a href="/docs/roadmap.html#reference" class="roadmap-link">Reference <span class="roadmap-badge">Roadmap</span></a></li>
+      </ul>
+    </aside>
+
+    <main class="docs-content">
+      <h1>What is JellyClaw?</h1>
+      <p>
+        JellyClaw is <strong>the Local AI Office</strong>: a multi-agent orchestration platform that runs a
+        hierarchy of AI agents — a CEO agent, department heads, and workers — entirely on your own hardware
+        via <a href="https://ollama.com" target="_blank" rel="noopener">Ollama</a>. You describe the team in
+        YAML, hand it a goal, and it works overnight, reporting results to your Telegram.
+      </p>
+      <div class="callout">
+        <p><strong>Status:</strong> The core engine is in active development — <a href="https://github.com/jellyclaw-org/jellyclaw" target="_blank" rel="noopener">watch the repo</a>.</p>
+      </div>
+
+      <h2 id="architecture">Architecture overview</h2>
+      <p>Three layers, one direction of delegation:</p>
+      <ul>
+        <li><strong>CEO Agent</strong> — takes your goal and breaks it into department-level work.</li>
+        <li><strong>Department Heads</strong> — plan their area, delegate tasks to workers, review results.</li>
+        <li><strong>Worker Agents</strong> — execute individual tasks on local models and report back up.</li>
+      </ul>
+      <p>
+        Around the hierarchy sit the MVP-scope pieces: <strong>Ollama</strong> runs the models locally,
+        <strong>Claude API</strong> is an optional escalation path for hard tasks, <strong>SQLite</strong>
+        stores state on disk, <strong>Telegram</strong> carries reports to you, and <strong>GitHub</strong>
+        is where agents read and write code.
+      </p>
+
+      <h2 id="config">Configuration</h2>
+      <p>A team is one YAML file. The dev-team template concept:</p>
+      <div class="code-block">
+        <pre><code><span class="comment"># teams/dev-team.yaml — planned format for the CLI MVP</span>
+team: dev-team
+ceo:
+  model: qwen2.5:14b          <span class="comment"># runs locally via Ollama</span>
+departments:
+  engineering:
+    head: llama3.1:8b
+    workers: 2
+report:
+  channel: telegram</code></pre>
+      </div>
+      <p>Next: <a href="/docs/quick-start.html">Quick start</a>.</p>
+    </main>
+  </div>
+</div>
+
+<footer class="footer">
+  <span>© 2026 JellyClaw · In active development — watch the repo.</span>
+  <nav>
+    <a href="https://github.com/jellyclaw-org/jellyclaw" target="_blank" rel="noopener">GitHub</a>
+    <a href="/docs/">Docs</a>
+  </nav>
+</footer>
+
+<script src="/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quick start — JellyClaw Docs</title>
+<meta name="description" content="Prerequisites and install-from-source steps for JellyClaw.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/css/style.css">
+<script>try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="/"><img src="/favicon.svg" alt="" width="28" height="28"><span>JellyClaw</span></a>
+  <div class="nav-links">
+    <a href="https://github.com/jellyclaw-org/jellyclaw" target="_blank" rel="noopener">GitHub</a>
+  </div>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+    <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  </button>
+</nav>
+
+<div class="container">
+  <div class="docs-layout">
+    <aside class="docs-sidebar">
+      <h4>Get started</h4>
+      <ul>
+        <li><a href="/docs/">Overview</a></li>
+        <li><a href="/docs/quick-start.html" class="active">Quick start</a></li>
+      </ul>
+      <h4>Help</h4>
+      <ul>
+        <li><a href="/docs/help.html">FAQ &amp; roadmap</a></li>
+      </ul>
+      <h4>Coming up</h4>
+      <ul>
+        <li><a href="/docs/roadmap.html#agents" class="roadmap-link">Agents <span class="roadmap-badge">Roadmap</span></a></li>
+        <li><a href="/docs/roadmap.html#integrations" class="roadmap-link">Integrations <span class="roadmap-badge">Roadmap</span></a></li>
+        <li><a href="/docs/roadmap.html#reference" class="roadmap-link">Reference <span class="roadmap-badge">Roadmap</span></a></li>
+      </ul>
+    </aside>
+
+    <main class="docs-content">
+      <h1>Quick start</h1>
+
+      <h2 id="prerequisites">Prerequisites</h2>
+      <ul>
+        <li><strong>Node.js</strong> — a current LTS release.</li>
+        <li><strong>Ollama</strong> — installed and running, with at least one model pulled (e.g. <code>ollama pull qwen2.5:14b</code>).</li>
+      </ul>
+
+      <h2 id="install">Install from source</h2>
+      <div class="code-block">
+        <pre><code>git clone https://github.com/jellyclaw-org/jellyclaw.git
+cd jellyclaw
+<span class="comment"># the core engine ships with the CLI MVP — watch the repo</span></code></pre>
+      </div>
+
+      <h2 id="first-run">First run <span class="status">Available with the CLI MVP</span></h2>
+      <p>Once the CLI MVP lands, the first run is: pick a team template, point it at a goal, and let it work.</p>
+      <div class="code-block">
+        <pre><code><span class="comment"># planned CLI MVP commands</span>
+jellyclaw start --team teams/dev-team.yaml
+<span class="comment"># agents work; results land in your Telegram</span></code></pre>
+      </div>
+      <p>
+        Until then, the <a href="/docs/">overview</a> covers the architecture and config format, and the
+        <a href="/docs/roadmap.html">roadmap</a> lists exactly what ships with the MVP.
+      </p>
+    </main>
+  </div>
+</div>
+
+<footer class="footer">
+  <span>© 2026 JellyClaw · In active development — watch the repo.</span>
+  <nav>
+    <a href="https://github.com/jellyclaw-org/jellyclaw" target="_blank" rel="noopener">GitHub</a>
+    <a href="/docs/">Docs</a>
+  </nav>
+</footer>
+
+<script src="/js/main.js" defer></script>
+</body>
+</html>
